@@ -1,4 +1,5 @@
 #! /bin/bash
 git add .
 git commit -m "something update"
+git remote add origin git@github.com:GJoker/GJoker.github.io.git
 git push origin master
