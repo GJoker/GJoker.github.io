@@ -11,7 +11,8 @@ url: "https://GJoker.github.io"
 # Comment
 comment:
     # disqus: leopard
-    gitment: GJoker 
+    # gitment: GJoker 
+    duoshuo: GJoker
 
 # Social
 social:
