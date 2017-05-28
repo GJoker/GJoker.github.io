@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% include share.html %}
+
 
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -47,13 +47,12 @@ layout: default
   <section class="post">
     {{ content }}
   </section>
+  {% include share.html %}
 </article>
 
 <br>
 {% include new-old.html %}
-<br>
 
-<br>
 {% include comments.html %}
 <br>
 
