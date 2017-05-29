@@ -2,7 +2,7 @@
 layout: default
 ---
 <script type="text/javascript">
-  $(function(){
+  function(){
     arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799];  //musicID array
     musicID = Math.floor(Math.random()*(arrMusicID.length)) //get a ran num as index
     $('body').css('height',document.documentElement.clientHeight -5);
@@ -20,7 +20,7 @@ layout: default
     iframe.width=250;
     iframe.height=52;
     document.body.appendChild(iframe);
-});
+};
 </script>
 
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
