@@ -12,9 +12,10 @@ gentie_productKey: b2307e53ef7941a5b660009661edc991
 
 # Comment
 comment:
-    # disqus: leopard
+    # disqus: Gjoker
     # gitment: GJoker 
-    duoshuo: GJoker
+    #duoshuo: GJoker
+    gentie: GJoker
 
 # Social
 social:

@@ -22,21 +22,7 @@
     
   {% elsif site.comment.duoshuo %}
     
-
-  <div id="hot-news-wrap"></div>
-<script>var yunModuleEnv = true;</script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-  var yunTieProductKey = "b2307e53ef7941a5b660009661edc991";  
-  var yunHotNewsWrap = "hot-news-wrap";   //放置的DOM节点ID 或 样式类
-  Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2hvdF9uZXdzX3NjcmlwdC5odG1s", true);
-</script>
-  {% endif %}
-
-  
-  
-</section>
-<!--    <div class="ds-thread" data-thread-key="{{ page.url }}" data-title="{{ page.title }}" data-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}"></div>
+   <div class="ds-thread" data-thread-key="{{ page.url }}" data-title="{{ page.title }}" data-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}"></div>
 
     <script type="text/javascript">
         var duoshuoQuery = {short_name:"{{ site.comment.duoshuo }}"};
@@ -47,4 +33,21 @@
             ds.charset = 'UTF-8';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
-    </script> -->
+    </script>
+
+  
+
+  {% elsif site.comment.gentie %}
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script>
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: "b2307e53ef7941a5b660009661edc991",
+    target: "cloud-tie-wrapper"
+  };
+    </script>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+  {% endif %}
+</section>
