@@ -47,14 +47,15 @@ layout: default
   <section class="post">
     {{ content }}
   </section>
-  {% include share.html %}
+
 </article>
 
 <br>
-<% include dashang.html %>
-<br>
+  {% include share.html %}
+{% include dashang.html %}
+
 {% include new-old.html %}
-<br>
+
 {% include comments.html %}
 <br>
 
