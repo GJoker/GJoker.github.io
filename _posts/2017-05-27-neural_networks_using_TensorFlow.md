@@ -523,5 +523,4 @@ sample_submission.to_csv(os.path.join(sub_dir, 'sub01.csv'), index=False)
 这篇文章是在 [An Introduction to Implementing Neural Networks using TensorFlow](https://www.analyticsvidhya.com/blog/2016/10/an-introduction-to-implementing-neural-networks-using-tensorflow/) 的基础上做的翻译和局部调整，如果发现翻译中有不对或者歧义的的地方欢迎在下面评论里提问，我会加以修正 。
 
 
-$$ a \ lt b$$
 
