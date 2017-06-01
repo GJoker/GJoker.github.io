@@ -5,7 +5,7 @@
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
 var cloudTieConfig = {
-  url: document.location.href, 
+  url: document.location.href,
   sourceId: "",
   productKey: "b2307e53ef7941a5b660009661edc991",
   target: "cloud-tie-wrapper"
@@ -15,7 +15,6 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
 </script>
 
 
-
 </section>
 
 
@@ -23,14 +22,14 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
  <!--  {% if site.comment.disqus %}
     <div id="disqus_thread"></div>
     <script>
-    
+
     var disqus_config = function () {
         this.page.url = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
         this.page.identifier = "{{ page.url }}";
     };
 
     var disqus_shortname = '{{ site.comment.disqus }}';
-    
+
     (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
         s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -39,9 +38,9 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
         })();
     </script>
     <noscript>要查看<a href="http://disqus.com/?ref_noscript"> Disqus </a>评论，请启用 JavaScript</noscript>
-    
+
   {% elsif site.comment.duoshuo %}
-    
+
    <div class="ds-thread" data-thread-key="{{ page.url }}" data-title="{{ page.title }}" data-url="{{ page.url | prepend: site.baseurl | prepend: site.url }}"></div>
 
     <script type="text/javascript">
@@ -54,5 +53,5 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
-  
+
   {% endif %} -->
