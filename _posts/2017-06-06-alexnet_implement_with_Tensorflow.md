@@ -9,7 +9,7 @@ music-id: 407000263
 　　最近这段时间将会更新几篇博客，主要是来简单地介绍下四个比较经典的卷积神经网络模型：AlexNet、VGGNet、Google InceptionNet以及ResNet。然后使用 Tensorflow 分别对其进行实现。
 
 <div align="center">
-	<img src="/images/posts/tfimg/logo.jpg" height="200" width="400">
+	<img src="/images/posts/tfimg/logo.jpg" height="300" width="500">
 </div>
 
 
