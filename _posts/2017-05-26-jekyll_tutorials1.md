@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Jekyll搭建个人博客
-date: 2017-05-26 
-tags: 博客   
+date: 2017-05-26
+tags: 技术杂谈   
 music-id: 442495638
 ---
 
@@ -15,7 +15,7 @@ music-id: 442495638
 
  　Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过 Markdown （或者 Textile） 以及 Liquid 转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的
 
-　使用 Jekyll 搭建博客之前要确认下本机环境，Git 环境（用于部署到远端）、[Ruby](http://www.ruby-lang.org/en/downloads/) 环境（Jekyll 是基于 Ruby 开发的）、包管理器 [RubyGems](http://rubygems.org/pages/download)                
+　使用 Jekyll 搭建博客之前要确认下本机环境，Git 环境（用于部署到远端）、[Ruby](http://www.ruby-lang.org/en/downloads/) 环境（Jekyll 是基于 Ruby 开发的）、包管理器 [RubyGems](http://rubygems.org/pages/download)
 　　如果你是 Mac 用户，你就需要安装 Xcode 和 Command-Line Tools了。下载方式 Preferences → Downloads → Components。
 
 　　Jekyll 是一个免费的简单静态网页生成工具，可以配合第三方服务例如： Disqus（评论）、网易云跟帖(评论) 以及分享 等等扩展功能，Jekyll 可以直接部署在 Github（国外） 或 Coding（国内） 上，可以绑定自己的域名。[Jekyll中文文档](http://jekyll.bootcss.com/)、[Jekyll英文文档](https://jekyllrb.com/)、[Jekyll主题列表](http://jekyllthemes.org/)。
@@ -25,20 +25,20 @@ music-id: 442495638
 
 安装 jekyll
 
-```     
-$ gem install jekyll     
-```    
+```
+$ gem install jekyll
+```
 
 创建博客
 
-```    
-$ jekyll new myBlog    
-```   
+```
+$ jekyll new myBlog
+```
 
 进入博客目录
 
 ```
-$ cd myBlog  
+$ cd myBlog
 ```
 
 启动本地服务
@@ -82,13 +82,13 @@ so easy !
 
 ```
 
-这些目录结构以及具体的作用可以参考 [官网文档](http://jekyll.com.cn/docs/structure/) 
+这些目录结构以及具体的作用可以参考 [官网文档](http://jekyll.com.cn/docs/structure/)
 
 进入 _config.yml 里面，修改成你想看到的信息，重新 jekyll server ，刷新浏览器就可以看到你刚刚修改的信息了。
 
 到此，博客初步搭建算是完成了，
 
-### 博客部署到远端 
+### 博客部署到远端
 
 　我这里讲的是部署到 Github Page 创建一个 github 账号，然后创建一个跟你账户名一样的仓库，如我的 github 账户名叫 [GJoker](https://github.com/GJoker)，我的 github 仓库名就叫 [GJoker.github.io](https://github.com/GJoker/GJoker.github.io)，创建好了之后，把刚才建立的 myBlog 项目 push 到 username.github.io仓库里去（username指的是你的github用户名），检查你远端仓库已经跟你本地 myBlog 同步了，然后你在浏览器里输入 username.github.io ，就可以访问你的博客了。
 
@@ -111,23 +111,23 @@ categories: jekyll update
 正文...
 ```
 
-title: 显示的文章名， 如：title: 我的第一篇文章                    
-date:  显示的文章发布日期，如：date: 2017-05-26                          
-categories: tag标签的分类，如：categories: 随笔            
+title: 显示的文章名， 如：title: 我的第一篇文章
+date:  显示的文章发布日期，如：date: 2017-05-26
+categories: tag标签的分类，如：categories: 随笔
 
 注意：文章头部格式必须为上面的，.... 就是文章的正文内容。
 
-我写文章使用的是 Sublime Text2 编辑器，如果你对 markdown 语法不熟悉的话，可以看看[作业部落的教程](https://www.zybuluo.com/) 
+我写文章使用的是 Sublime Text2 编辑器，如果你对 markdown 语法不熟悉的话，可以看看[作业部落的教程](https://www.zybuluo.com/)
 
 
 ### 使用我的博客模板
 
 虽然博客部署完成了，你会发现博客太简单不是你想要的，如果你喜欢我的模板的话，可以使用我的模板。
 
-首先你要获取的我博客，[Github项目地址](https://github.com/GJoker/GJoker.github.io.git)，你可以直接[点击下载博客](https://github.com/GJoker/GJoker.github.io/archive/master.zip)，进去GJoker.github.io/ 目录下， 使用命令部署本地服务 
+首先你要获取的我博客，[Github项目地址](https://github.com/GJoker/GJoker.github.io.git)，你可以直接[点击下载博客](https://github.com/GJoker/GJoker.github.io/archive/master.zip)，进去GJoker.github.io/ 目录下， 使用命令部署本地服务
 
 ```
-$ jekyll server   
+$ jekyll server
 ```
 
 ### 如果你本机没配置过任何jekyll的环境，可能会报错
@@ -158,7 +158,7 @@ $ gem install bundler
 ```
 
 
-提示： 
+提示：
 
 ```
 Fetching: bundler-1.13.5.gem (100%)
@@ -213,7 +213,7 @@ Use `bundle show [gemname]` to see where a bundled gem is installed.
 
 ```
 
-bundler安装完成，后再次启动本地服务 
+bundler安装完成，后再次启动本地服务
 
 ```
 $ jekyll server
@@ -224,11 +224,11 @@ $ jekyll server
 
 ```
 Configuration file: /Users/tendcloud-Caroline/Desktop/leopardpan.github.io/_config.yml
-  Dependency Error: Yikes! It looks like you don't have jekyll-sitemap or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- jekyll-sitemap' If you run into trouble, you can find helpful resources at http://jekyllrb.com/help/! 
+  Dependency Error: Yikes! It looks like you don't have jekyll-sitemap or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- jekyll-sitemap' If you run into trouble, you can find helpful resources at http://jekyllrb.com/help/!
 jekyll 3.1.1 | Error:  jekyll-sitemap
 
 ```
-表示 当前的 jekyll 版本是 3.1.1 ，无法使用 jekyll-sitemap 
+表示 当前的 jekyll 版本是 3.1.1 ，无法使用 jekyll-sitemap
 
 解决方法有两个
 
@@ -249,7 +249,7 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
             Source: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpan.github.io-github
        Destination: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpan.github.io-github/_site
  Incremental build: disabled. Enable with --incremental
-      Generating... 
+      Generating...
                     done in 0.901 seconds.
  Auto-regeneration: enabled for '/Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpan.github.io-github'
 Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpan.github.io-github/_config.yml
@@ -267,7 +267,7 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
 >* 如果你想使用我的模板请把 _posts/ 目录下的文章都去掉。
 >* 修改 _config.yml 文件里面的内容为你自己的。
 
-然后使用 git push 到你自己的仓库里面去，检查你远端仓库，在浏览器输入 username.github.io 就会发现，你有一个漂亮的主题模板了。      
+然后使用 git push 到你自己的仓库里面去，检查你远端仓库，在浏览器输入 username.github.io 就会发现，你有一个漂亮的主题模板了。
 
 
 #### 【 如果想修改博客样式却不知道怎么修改，可以直接在评论里给我提问 】
@@ -281,16 +281,7 @@ Configuration file: /Users/baixinpan/Desktop/OpenSource/Mine/Page-Blog/leopardpa
 后面会继续介绍，在我的博客基础上，如何修改成你自己喜欢的 Style，欢迎继续关注我博客的更新。
 
 
-### Q&A 
+### Q&A
 
-> 问题：最近很多朋友使用我的模板报警告：The CNAME `gjoker.xyz` is already taken 
+> 问题：最近很多朋友使用我的模板报警告：The CNAME `gjoker.xyz` is already taken
 > 解决：把CNAME里面的gjoker.xyz修改成你自己的域名，如果你暂时没有域名，CNAME里面就什么都不用谢。（之前没人反馈过这个问题，应该是github page最近才最的限制。）
-
-
-
-
-
-
-
-
-
