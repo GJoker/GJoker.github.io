@@ -6,9 +6,6 @@ tags: Tensorflow
 music-id: 407000263
 ---
 
-[TOC]
-
-
 最近这段时间将会更新几篇博客，来简单地介绍下几款经典的卷积神经网络模型，包括：AlexNet、VGGNet、Google IncepNet、ResNet。并使用 Tensorflow 分别对其进行代码实现。
 
 <div align="center">
