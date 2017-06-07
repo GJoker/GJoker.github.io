@@ -6,10 +6,10 @@ tags: Tensorflow
 music-id: 407000263
 ---
 
-最近这段时间将会更新几篇博客，来简单地介绍下几款经典的卷积神经网络模型，包括：AlexNet、VGGNet、Google IncepNet、ResNet。并使用 Tensorflow 分别对其进行代码实现。
+最近这段时间将会更新几篇博客，主要是来简单地介绍下四个比较经典的卷积神经网络模型：AlexNet、VGGNet、Google InceptionNet以及ResNet。然后使用 Tensorflow 分别对其进行实现。
 
 <div align="center">
-	<img src="/images/posts/tfimg/logo.jpg" height="300" width="500">
+	<img src="/images/posts/tfimg/logo.jpg" height="200" width="400">
 </div>
 
 
@@ -191,3 +191,7 @@ if __name__ == "__main__":
 AlexNet 的出现为我们彻底打开深度学习的这扇大门，它取得的巨大突破一方面是所设计的科学合理的网络结构，另一方面则得益于海量的标注数据集(ImageNet)以及强大 GPU 并行计算能力。
 
 当年 AlexNet 发表在 NIPS 时候，Hinton 曾说道“如果你没参加过之前十几年的 NIPS，那没关系，因为直到今年神经网络才真正开始生效。”字里行间无不流漏出自信和霸气。
+
+<div align="center">
+	<img src="/images/posts/tfimg/minguo.jpg" height="130" width="80">
+</div>
