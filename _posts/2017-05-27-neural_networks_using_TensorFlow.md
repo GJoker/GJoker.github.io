@@ -1,21 +1,21 @@
 ---
 layout: post
 title: 使用 TensorFlow 实现神经网络
-date: 2017-05-27 
-tags: 机器学习  
+date: 2017-05-27
+tags: Tensorflow
 music-id: 441138551
 ---
 
 ## 介绍
 
-　　一直关注 `数据科学` 、 `机器学习` 的同学，一定会经常看到或听到关于 `深度学习` 和 `神经网络` 相关信息。如果你对 `深度学习` 感兴趣，但却还没有实际动手操作过，你可以从这里得到实践。 
+　　一直关注 `数据科学` 、 `机器学习` 的同学，一定会经常看到或听到关于 `深度学习` 和 `神经网络` 相关信息。如果你对 `深度学习` 感兴趣，但却还没有实际动手操作过，你可以从这里得到实践。
 
-　　在本文中，我将介绍 `TensorFlow` , 帮你了解 `神经网络` 的实际作用，并使用 `TensorFlow` 来解决现实生活中的问题。 读这篇文章前，需要知道 `神经网络` 的基础知识和一些熟悉编程理念，文章中的代码是使用 `Pyhton` 编写的，所以还需要了解一些 `Python` 的基本语法，才能更有利对于文章的理解。                  
-                           
+　　在本文中，我将介绍 `TensorFlow` , 帮你了解 `神经网络` 的实际作用，并使用 `TensorFlow` 来解决现实生活中的问题。 读这篇文章前，需要知道 `神经网络` 的基础知识和一些熟悉编程理念，文章中的代码是使用 `Pyhton` 编写的，所以还需要了解一些 `Python` 的基本语法，才能更有利对于文章的理解。
+
 
 <div align="center">
-	<img src="/images/posts/tfimg/logo.jpg" height="300" width="500">  
-</div> 
+	<img src="/images/posts/tfimg/logo.jpg" height="300" width="500">
+</div>
 
 
 ### 目录
@@ -86,7 +86,7 @@ music-id: 441138551
 
 　　“`TensorFlow` 是一个开源软件库，用于使用数据流图进行数值计算。图中的节点表示数学运算，而图边表示在它们之间传递的多维数据阵列（也称为张量）。 灵活的架构允许您使用单一 API 将计算部署到桌面、服务器或移动设备中的一个或多个的 CPU 或 GPU 中。
 
-![](http://www.tensorfly.cn/images/tensors_flowing.gif)     
+![](http://www.tensorfly.cn/images/tensors_flowing.gif)
 
 
 　　如果感觉这听起来太高大上，不要担心。这里有我简单的定义，`TensorFlow` 看起来没什么，只是 numpy 有些难以理解。如果你以前使用过 numpy ，理解 TensorFlow 将是手到擒来！ numpy 和 TensorFlow 之间的主要区别是 TensorFlow 遵循惰性编程范例。 TensorFlow 的操作基本上都是对 session 的操作，它首先构建一个所有操作的图形，当我们调用 session 时 TensorFlow 就开始工作了。它通过将内部数据表示转换为张量（Tensor，也称为多维数组）来构建为可扩展的。 构建计算图可以被认为是 TensorFlow 的主要成分。想更多地了解一个计算图形的数学结构，可以阅读 [这篇文章](http://colah.github.io/posts/2015-08-Backprop/) 。
@@ -96,7 +96,7 @@ music-id: 441138551
 **使用 TensorFlow 的优点是：**
 
 * **它有一个直观的结构** ，顾名思义它有 “张量流”，你可以轻松地可视每个图中的每一个部分。
-* **轻松地在 cpu / gpu 上进行分布式计算** 
+* **轻松地在 cpu / gpu 上进行分布式计算**
 * **平台的灵活性**  。可以随时随地运行模型，无论是在移动端、服务器还是 PC 上。
 
 ### <a name="A-typical-flow"></a>TensorFlow 的典型 “流”
@@ -107,21 +107,21 @@ music-id: 441138551
 
 # define hyperparamters of ML algorithm
 clf = svm.SVC(gamma=0.001, C=100.)
-# train 
+# train
 clf.fit(X, y)
-# test 
+# test
 clf.predict(X_test)
 ```
 
 正如我前面所说，TensorFlow 遵循一种懒惰的方法。 在 TensorFlow 中运行程序的通常工作流程如下：
 
 * **建立一个计算图**， 任何的数学运算可以使用 TensorFlow 支撑。
-* **初始化变量**， 编译预先定义的变量   
-* **创建 session**， 这是神奇的开始的地方 ！  
+* **初始化变量**， 编译预先定义的变量
+* **创建 session**， 这是神奇的开始的地方 ！
 * **在 session 中运行图**， 编译图形被传递到 session ，它开始执行它。
 * **关闭 session**， 结束这次使用。
 
-TensoFlow 中使用的术语很少   
+TensoFlow 中使用的术语很少
 
 ```
 placeholder：将数据输入图形的一种方法
@@ -252,11 +252,11 @@ pylab.show()
 
 ```
 
-![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/3.png)       
+![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/3.png)
 
 上面的图像表示为 numpy 数组，如下所示
 
-![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/one.png)       
+![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/one.png)
 
 
 * 为了方便数据操作，让我们 的存储作为 numpy 的阵列的所有图片
@@ -269,7 +269,7 @@ for img_name in train.filename:
     img = imread(image_path, flatten=True)
     img = img.astype('float32')
     temp.append(img)
-    
+
 train_x = np.stack(temp)
 
 temp = []
@@ -278,7 +278,7 @@ for img_name in test.filename:
     img = imread(image_path, flatten=True)
     img = img.astype('float32')
     temp.append(img)
-    
+
 test_x = np.stack(temp)
 ```
 
@@ -304,26 +304,26 @@ def dense_to_one_hot(labels_dense, num_classes=10):
     index_offset = np.arange(num_labels) * num_classes
     labels_one_hot = np.zeros((num_labels, num_classes))
     labels_one_hot.flat[index_offset + labels_dense.ravel()] = 1
-    
+
     return labels_one_hot
 
 def preproc(unclean_batch_x):
     """Convert values to range 0-1"""
     temp_batch = unclean_batch_x / unclean_batch_x.max()
-    
+
     return temp_batch
 
 def batch_creator(batch_size, dataset_length, dataset_name):
     """Create batch with random samples and return appropriate format"""
     batch_mask = rng.choice(dataset_length, batch_size)
-    
+
     batch_x = eval(dataset_name + '_x')[[batch_mask]].reshape(-1, 784)
     batch_x = preproc(batch_x)
-    
+
     if dataset_name == 'train':
         batch_y = eval(dataset_name).ix[batch_mask, 'label'].values
         batch_y = dense_to_one_hot(batch_y)
-        
+
     return batch_x, batch_y
 
 ```
@@ -406,32 +406,32 @@ init = tf.initialize_all_variables()
 with tf.Session() as sess:
     # create initialized variables
     sess.run(init)
-    
+
     ### for each epoch, do:
     ###   for each batch, do:
     ###     create pre-processed batch
     ###     run optimizer by feeding batch
     ###     find cost and reiterate to minimize
-    
+
     for epoch in range(epochs):
         avg_cost = 0
         total_batch = int(train.shape[0]/batch_size)
         for i in range(total_batch):
             batch_x, batch_y = batch_creator(batch_size, train_x.shape[0], 'train')
             _, c = sess.run([optimizer, cost], feed_dict = {x: batch_x, y: batch_y})
-            
+
             avg_cost += c / total_batch
-            
+
         print "Epoch:", (epoch+1), "cost =", "{:.5f}".format(avg_cost)
-    
+
     print "\nTraining complete!"
-    
-    
+
+
     # find predictions on val set
     pred_temp = tf.equal(tf.argmax(output_layer, 1), tf.argmax(y, 1))
     accuracy = tf.reduce_mean(tf.cast(pred_temp, "float"))
     print "Validation Accuracy:", accuracy.eval({x: val_x.reshape(-1, 784), y: dense_to_one_hot(val_y.values)})
-    
+
     predict = tf.argmax(output_layer, 1)
     pred = predict.eval({x: test_x.reshape(-1, 784)})
 ```
@@ -447,7 +447,7 @@ Epoch: 4 cost = 0.57141
 Epoch: 5 cost = 0.44550
 
 Training complete!
-Validation Accuracy: 0.952823	
+Validation Accuracy: 0.952823
 
 ```
 
@@ -459,7 +459,7 @@ img_name = rng.choice(test.filename)
 filepath = os.path.join(data_dir, 'Train', 'Images', 'test', img_name)
 
 img = imread(filepath, flatten=True)
- 
+
 test_index = int(img_name.split('.')[0]) - 49000
 
 print "Prediction is: ", pred[test_index]
@@ -476,7 +476,7 @@ Prediction is:  8
 
 ```
 
-![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/8.png)       
+![](https://www.analyticsvidhya.com/wp-content/uploads/2016/10/8.png)
 
 
 * 我们看到的模型性能是相当不错！ 现在让我们 创建一个提交
@@ -484,7 +484,7 @@ Prediction is:  8
 ```python
 
 sample_submission.filename = test.filename
- 
+
 sample_submission.label = pred
 
 sample_submission.to_csv(os.path.join(sub_dir, 'sub01.csv'), index=False)
@@ -514,14 +514,11 @@ sample_submission.to_csv(os.path.join(sub_dir, 'sub01.csv'), index=False)
 　　许多上述功能可以被抽象为给出无缝的端到端工作流，如果你使用 scikit-learn ，你可能知道一个高级库如何抽象“底层”实现，给终端用户一个更容易的界面。尽管 TensorFlow 已经提取了大多数实现，但是也有更高级的库，如 TF-slim 和 TFlearn。
 
 ### 参考资源
-* [TensorFlow 官方库](https://github.com/tensorflow/tensorflow) 
+* [TensorFlow 官方库](https://github.com/tensorflow/tensorflow)
 * Rajat Monga（TensorFlow技术负责人） [“TensorFlow为大家”](https://youtu.be/wmw8Bbb_eIE)  的视频
-* [一个专用资源的策划列表](https://github.com/jtoy/awesome-tensorflow/#github-projects)  
+* [一个专用资源的策划列表](https://github.com/jtoy/awesome-tensorflow/#github-projects)
 
 ### 关于原文
 
 感谢原文作者 [Faizan Shaikh](https://www.analyticsvidhya.com/blog/author/jalfaizy/) 的分享，
 这篇文章是在 [An Introduction to Implementing Neural Networks using TensorFlow](https://www.analyticsvidhya.com/blog/2016/10/an-introduction-to-implementing-neural-networks-using-tensorflow/) 的基础上做的翻译和局部调整，如果发现翻译中有不对或者歧义的的地方欢迎在下面评论里提问，我会加以修正 。
-
-
-
