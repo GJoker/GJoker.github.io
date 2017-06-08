@@ -1,6 +1,6 @@
 ---
 layout: post
-title: MCＭC 方法
+title: MCＭC 方法介绍
 date: 2017-06-08
 tags: 数学杂谈
 music-id: 784594
