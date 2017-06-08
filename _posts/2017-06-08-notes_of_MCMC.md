@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 马尔科夫链蒙特卡罗方法
+title: MCＭC 方法
 date: 2017-06-08
 tags: 数学杂谈
 music-id: 784594
