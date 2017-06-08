@@ -5,9 +5,15 @@ date: 2017-06-08
 tags: 数学杂谈
 music-id: 784594
 ---
-## MCMC 方法介绍
+
+
 
 　　记得在当初学习 **受限制波尔兹曼机(Restricted Boltzmann Machine, RBM)** 的时候第一次接触到了 **马尔科夫链蒙特卡罗方法(Markov chain Monte Carlo，MCMC)** ，当时对其原理简直就是一脸懵逼，果断放弃继续深究。后来在研究 **generative models** 的时候，在很多的 Paper 里再次看到这个关键词。于是就抱着我不入地狱谁入地狱的心态，查阅各种文献资料，终于对其原理有了个初步了解，于是觉得很有必要将其整理成学习笔记。在讲 **MCMC** 之前，先简单地介绍下**蒙特卡罗方法**。
+
+<div align="center">
+	<img src="/images/posts/tfimg/minguo2.jpg" height="100" width="100">
+</div>
+
 ### 蒙特卡罗方法
 　　最早的**蒙特卡罗方法**是应用在物理上的，它主要是用于通过随机化的方法计算积分。如给定函数 $h(x)$ ，思考计算如下积分：
 
