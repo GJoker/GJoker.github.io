@@ -3,7 +3,7 @@ layout: post
 title: Tensorflow 数据读取机制详细介绍
 date: 2017-06-10
 tags: Tensorflow
-music-id: 614150
+music-id: 442503948
 ---
 
 　　tensorflow 的数据读取机制对于新手而言比较难理解，而且官方文档写得也比较简陋，网上的资料也介绍得不是很透彻。为了帮助初学者有一个比较直观的认识，今天便写篇博客为大家详细地介绍下 tensorflow 的数据读取机制。
@@ -55,9 +55,7 @@ music-id: 614150
 
 ### tensorflow读取数据机制的对应函数
 
-　　如何在tensorflow中创建上述的两个队列呢？
-
-对于文件名队列，我们使用 `tf.train.string_input_producer` 函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。
+　　如何在tensorflow中创建上述的两个队列呢？对于文件名队列，我们使用 `tf.train.string_input_producer` 函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。
 
 　　此外 `tf.train.string_input_producer` 还有两个重要的参数，一个是 `num_epochs` ，它就是我们上文中提到的epoch数。另外一个就是 `shuffle` ，`shuffle` 是指在一个epoch内文件的顺序是否被打乱。若设置 `shuffle=False` ，如下图，每个epoch内，数据还是按照A、B、C的顺序进入文件名队列，这个顺序不会改变：
 
