@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 共轭先验和共轭分布
+title: 聊一聊共轭先验
 date: 2017-06-11
 tags: 数学杂谈
 music-id: 441617849
