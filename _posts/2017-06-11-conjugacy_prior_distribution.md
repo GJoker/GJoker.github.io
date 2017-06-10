@@ -32,7 +32,7 @@ $$P(X|D) \propto P(\mu |D)*P(X)$$
 
 $$P(X|D)= \frac{P(\mu |D)*P(X)}{P(D)}$$
 
-上式是根据贝叶斯公式得到的，其中 $ P(\mu|D)=P(D|X) $　。
+上式是根据贝叶斯公式得到的，其中 $P(\mu \left | D)=P(D \left | X)$　。
 
 
 ### 似然函数
