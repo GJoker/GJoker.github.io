@@ -23,9 +23,9 @@ music-id: 784594
   <img src="/images/posts/tfreaddata/tujie2.png" height="250" width="500">
 </div>
 
-读取线程源源不断地将文件系统中的图片读入到一个内存的队列中，而负责计算的是另一个线程，计算需要数据时，直接从内存队列中取就可以了。这样就可以解决GPU因为IO而空闲的问题！
+　　读取线程源源不断地将文件系统中的图片读入到一个内存的队列中，而负责计算的是另一个线程，计算需要数据时，直接从内存队列中取就可以了。这样就可以解决GPU因为IO而空闲的问题！
 
-而在tensorflow中，为了方便管理，在内存队列前又添加了一层所谓的“文件名队列”。
+而在tensorflow中，为了方便管理，在内存队列前又添加了一层所谓的“**文件名队列**”。
 
 为什么要添加这一层文件名队列？我们首先得了解机器学习中的一个概念：epoch。对于一个数据集来讲，运行一个epoch就是将这个数据集中的图片全部计算一遍。如一个数据集中有三张图片A.jpg、B.jpg、C.jpg，那么跑一个epoch就是指对A、B、C三张图片都计算了一遍。两个epoch就是指先对A、B、C各计算一遍，然后再全部计算一遍，也就是说每张图片都计算了两遍。
 
@@ -51,21 +51,21 @@ tensorflow使用文件名队列+内存队列双队列的形式读入文件，可
   <img src="/images/posts/tfreaddata/tujie6.png" height="250" width="500">
 </div>
 
-此时，如果再尝试读入，系统由于检测到了“结束”，就会自动抛出一个异常（OutOfRange）。外部捕捉到这个异常后就可以结束程序了。这就是tensorflow中读取数据的基本机制。如果我们要跑2个epoch而不是1个epoch，那只要在文件名队列中将A、B、C依次放入两次再标记结束就可以了。
+　　此时，如果再尝试读入，系统由于检测到了“结束”，就会自动抛出一个异常（OutOfRange）。外部捕捉到这个异常后就可以结束程序了。这就是tensorflow中读取数据的基本机制。如果我们要跑2个epoch而不是1个epoch，那只要在文件名队列中将A、B、C依次放入两次再标记结束就可以了。
 
 ### tensorflow读取数据机制的对应函数
 
 如何在tensorflow中创建上述的两个队列呢？
 
-对于文件名队列，我们使用tf.train.string_input_producer函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。
+对于文件名队列，我们使用 `tf.train.string_input_producer` 函数。这个函数需要传入一个文件名list，系统会自动将它转为一个文件名队列。
 
-此外tf.train.string_input_producer还有两个重要的参数，一个是num_epochs，它就是我们上文中提到的epoch数。另外一个就是shuffle，shuffle是指在一个epoch内文件的顺序是否被打乱。若设置shuffle=False，如下图，每个epoch内，数据还是按照A、B、C的顺序进入文件名队列，这个顺序不会改变：
+此外 `tf.train.string_input_producer` 还有两个重要的参数，一个是 `num_epochs` ，它就是我们上文中提到的epoch数。另外一个就是 `shuffle` ，`shuffle` 是指在一个epoch内文件的顺序是否被打乱。若设置 `shuffle=False` ，如下图，每个epoch内，数据还是按照A、B、C的顺序进入文件名队列，这个顺序不会改变：
 
 <div align="center">
   <img src="/images/posts/tfreaddata/tujie7.png" height="250" width="500">
 </div>
 
-如果设置shuffle=True，那么在一个epoch内，数据的前后顺序就会被打乱，如下图所示：
+如果设置 `shuffle=True` ，那么在一个epoch内，数据的前后顺序就会被打乱，如下图所示：
 
 <div align="center">
   <img src="/images/posts/tfreaddata/tujie8.png" height="250" width="500">
@@ -73,25 +73,25 @@ tensorflow使用文件名队列+内存队列双队列的形式读入文件，可
 
 在tensorflow中，内存队列不需要我们自己建立，我们只需要使用reader对象从文件名队列中读取数据就可以了，具体实现可以参考下面的实战代码。
 
-除了tf.train.string_input_producer外，我们还要额外介绍一个函数：tf.train.start_queue_runners。初学者会经常在代码中看到这个函数，但往往很难理解它的用处，在这里，有了上面的铺垫后，我们就可以解释这个函数的作用了。
+除了 `tf.train.string_input_producer` 外，我们还要额外介绍一个函数： `tf.train.start_queue_runners` 。初学者会经常在代码中看到这个函数，但往往很难理解它的用处，在这里，有了上面的铺垫后，我们就可以解释这个函数的作用了。
 
-在我们使用tf.train.string_input_producer创建文件名队列后，整个系统其实还是处于“停滞状态”的，也就是说，我们文件名并没有真正被加入到队列中（如下图所示）。此时如果我们开始计算，因为内存队列中什么也没有，计算单元就会一直等待，导致整个系统被阻塞。
+在我们使用 `tf.train.string_input_producer` 创建文件名队列后，整个系统其实还是处于“停滞状态”的，也就是说，我们文件名并没有真正被加入到队列中（如下图所示）。此时如果我们开始计算，因为内存队列中什么也没有，计算单元就会一直等待，导致整个系统被阻塞。
 
 <div align="center">
   <img src="/images/posts/tfreaddata/tujie9.png" height="250" width="500">
 </div>
 
-而使用tf.train.start_queue_runners之后，才会启动填充队列的线程，这时系统就不再“停滞”。此后计算单元就可以拿到数据并进行计算，整个程序也就跑起来了，这就是函数tf.train.start_queue_runners的用处。
+而使用 `tf.train.start_queue_runners` 之后，才会启动填充队列的线程，这时系统就不再“停滞”。此后计算单元就可以拿到数据并进行计算，整个程序也就跑起来了，这就是函数 `tf.train.start_queue_runners` 的用处。
 
 <div align="center">
   <img src="/images/posts/tfreaddata/tujie10.png" height="250" width="500">
 </div>
 
 ### 代码实现
-我们用一个具体的例子感受tensorflow中的数据读取。如图，假设我们在当前文件夹中已经有A.jpg、B.jpg、C.jpg三张图片，我们希望读取这三张图片5个epoch并且把读取的结果重新存到read文件夹中。
+　　我们用一个具体的例子感受tensorflow中的数据读取。如图，假设我们在当前文件夹中已经有A.jpg、B.jpg、C.jpg三张图片，我们希望读取这三张图片5个epoch并且把读取的结果重新存到read文件夹中。
 
 <div align="center">
-  <img src="/images/posts/tfreaddata/tu1.png" height="200" width="500">
+  <img src="/images/posts/tfreaddata/tu1.png" height="150" width="500">
 </div>
 
 代码如下:
@@ -121,7 +121,7 @@ with tf.Session() as sess:
         with open('read/test_%d.jpg' % i, 'wb') as f:
             f.write(image_data)
 ```
-我们这里使用filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)建立了一个会跑5个epoch的文件名队列。并使用reader读取，reader每次读取一张图片并保存。
+　　我们这里使用 **filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)** 建立了一个会跑5个epoch的文件名队列。并使用reader读取，reader每次读取一张图片并保存。
 
 运行代码后，我们得到就可以看到read文件夹中的图片，正好是按顺序的5个epoch：
 
@@ -129,11 +129,11 @@ with tf.Session() as sess:
   <img src="/images/posts/tfreaddata/tu2.png" height="250" width="500">
 </div>
 
-如果我们设置filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)中的shuffle=True，那么在每个epoch内图像就会被打乱，如图所示：
+　　如果我们设置 **filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)** 中的 `shuffle=True`，那么在每个epoch内图像就会被打乱，如图所示：
 
 <div align="center">
   <img src="/images/posts/tfreaddata/tu3.png" height="250" width="500">
 </div>
 
 ### 总结
-这篇文章主要用图解的方式详细介绍了tensorflow读取数据的机制，最后还给出了对应的实战代码，希望能够给大家学习tensorflow带来一些实质性的帮助。如果各位小伙伴还有什么疑问，欢迎评论或私信告诉我，谢谢~
+　　这篇文章主要用图解的方式详细介绍了tensorflow读取数据的机制，最后还给出了对应的实战代码，希望能够给大家学习tensorflow带来一些实质性的帮助。如果各位小伙伴还有什么疑问，欢迎评论或私信告诉我，谢谢~
