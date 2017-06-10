@@ -3,7 +3,7 @@ layout: post
 title: Tensorflow 数据读取机制详细介绍
 date: 2017-06-10
 tags: Tensorflow
-music-id: 784594
+music-id: 614150
 ---
 
 　　tensorflow 的数据读取机制对于新手而言比较难理解，而且官方文档写得也比较简陋，网上的资料也介绍得不是很透彻。为了帮助初学者有一个比较直观的认识，今天便写篇博客为大家详细地介绍下 tensorflow 的数据读取机制。
@@ -126,7 +126,7 @@ with tf.Session() as sess:
 运行代码后，我们得到就可以看到read文件夹中的图片，正好是按顺序的5个epoch：
 
 <div align="center">
-  <img src="/images/posts/tfreaddata/tu2.png" height="250" width="600">
+  <img src="/images/posts/tfreaddata/tu2.png" height="200" width="600">
 </div>
 
 　　如果我们设置 **filename_queue = tf.train.string_input_producer(filename, shuffle=False, num_epochs=5)** 中的 `shuffle=True`，那么在每个epoch内图像就会被打乱，如图所示：
