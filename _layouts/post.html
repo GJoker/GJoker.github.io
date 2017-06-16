@@ -8,7 +8,7 @@ layout: default
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=1&id=2473018&auto=1&height=50"></iframe> -->
 
 <script type="text/javascript">
-function init(){
+$(function(){
    arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799];  //musicID array
    musicID = Math.floor(Math.random()*(arrMusicID.length)) //get a ran num as index
    $('body').css('height',document.documentElement.clientHeight -5);
@@ -26,7 +26,7 @@ function init(){
    iframe.width=250;
    iframe.height=52;
    document.body.appendChild(iframe);
-};
+});
 
 </script>
 
