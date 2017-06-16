@@ -6,13 +6,14 @@ tags: Tensorflow
 music-id: 530469
 ---
 
-　　今天主要给大家介绍下 [VGGNet](https://arxiv.org/pdf/1409.1556/)，有过图像处理经验的人对 VGG 应该不会陌生，因为它的模型具有很强的迁移能力，以其为基础的 Pre-training model 被广泛地应用到了图像处理的很多领域中。
+　　
 
 <div align="center">
 	<img src="/images/posts/tfimg/logo.jpg" height="300" width="500">
 </div>
 
 ### VGGNet 简介
+　　今天主要给大家介绍下 [VGGNet](https://arxiv.org/pdf/1409.1556/)，有过图像处理经验的人对 VGG 应该不会陌生，因为它的模型具有很强的迁移能力，以其为基础的 Pre-training model 被广泛地应用到了图像处理的很多领域中。
 
 　　VGGNet 是由 Oxford 的 Visual Geometry Group 研发的深度卷积神经网络。它探索了卷积神经网络的深度与性能之间的关系，通过利用 `3×3` 的卷积核以及 `2×2` 的最大池化层进行反复堆砌，构筑了 16-19 层深的卷积神经网络(当时而言算是比较深的了)。并且它在 2014 年 ImageNet 的比赛中取得了分类任务的第 2 名和定位任务的第 1 名的成绩，与之前的 state-of-the-art 的网络结构相比，它的错误率有了大幅度下降。
 
