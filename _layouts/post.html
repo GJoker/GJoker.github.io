@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id={{page.music-id}}&auto=1&height=32"></iframe>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id={{page.music-id}}&auto=1&height=32"></iframe> -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=1&id=2473018&auto=2&height=32"></iframe>
 <p>
 
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -38,9 +39,9 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <div class="post-meta">
-      <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>  
-         
+      <img src="/images/calendar.png" width="20px"/>
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>
+
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
     </div>
@@ -78,7 +79,3 @@ var gitment = new Gitment({
 })
 gitment.render('container')
 </script> -->
-
-
-
-
