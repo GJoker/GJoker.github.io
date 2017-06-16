@@ -4,9 +4,11 @@ layout: default
 
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id={{page.music-id}}&auto=1&height=32"></iframe> -->
 
+
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=1&id=2473018&auto=1&height=50"></iframe>
 
-$(function(){
+<script type="text/javascript">
+(function(){
     arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799];  //musicID array
     musicID = Math.floor(Math.random()*(arrMusicID.length)) //get a ran num as index
     $('body').css('height',document.documentElement.clientHeight -5);
@@ -25,6 +27,7 @@ $(function(){
     iframe.height=52;
     document.body.appendChild(iframe);
 });
+</script>
 <p>
 
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
