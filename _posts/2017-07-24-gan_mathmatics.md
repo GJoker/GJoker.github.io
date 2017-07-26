@@ -157,7 +157,7 @@ $$\max _D V(G,D)=\mathbb{E} _{x \sim P_{data}} [\log D(x)] + \mathbb{E} _{x \sim
 
 　　就变成了
 
-$$\max _D \widetilde{V}(G,D)=\frac{1}{m} \sum_{i=1}^{m} [\log D(x^i)] + \frac{1}{m} \sum_{i=1}^{m}  [\log (1-D(\widetilde{x}^i))] tag{10}$$
+$$\max _D \widetilde{V}(G,D)=\frac{1}{m} \sum_{i=1}^{m} [\log D(x^i)] + \frac{1}{m} \sum_{i=1}^{m}  [\log (1-D(\widetilde{x}^i))] \tag{10}$$
 
 　　然后在给定 D 的情况下，训练的 G 的式子也就变成了：
 
