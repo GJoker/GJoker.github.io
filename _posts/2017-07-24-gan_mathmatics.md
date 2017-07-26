@@ -115,7 +115,7 @@ $$
 \frac{\partial [P_{data}(x) \log D(x) + P_{G}(x) \log (1-D(x)]}{\partial D(x)} = \frac{P_{data}(x)}{D(x)} - \frac{P_{G}(x)}{1-D(x)} \tag{6}
 $$
 
-　　然后令上式为零，可以解得 $D^*(x) = \frac{P_{data}(x)}{P_{data}(x) + P_{G}(x)}$。于是将 $D^*(x)$ 带入到 $V(G,D)$ 就可以得到：
+　　然后令上式为零，可以解得 $D^*(x) = \frac{P_{data}(x)}{P_{data}(x) + P_{G}(x)}$ 。于是将 $D^*(x)$ 带入到 $V(G,D)$ 就可以得到：
 
 $$
 \begin{align*}
