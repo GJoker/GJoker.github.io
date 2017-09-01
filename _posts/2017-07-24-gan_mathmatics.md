@@ -2,7 +2,7 @@
 layout: post
 title: Generative Adversarial Network(GAN) 中的数学思想
 date: 2017-07-24
-tags: 数学杂谈
+tags: 生成模型
 music-id: 31654478
 ---
 
