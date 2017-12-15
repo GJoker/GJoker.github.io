@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll搭建个人博客
 date: 2017-05-26
-tags: 技术杂谈   
+tags: 技术分享   
 music-id: 442495638
 ---
 

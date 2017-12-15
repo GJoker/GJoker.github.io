@@ -168,3 +168,7 @@ $$\min _G\max _D \widetilde{V}(G,D)=\frac{1}{m} \sum_{i=1}^{m} [\log D(x^i)] + \
 
 ### 小结
 　　到此为止，GAN 的相关介绍就结束了，这篇博文主要是对 GAN 中的数学原理进行了一个简单推导，帮助那些初学者对 GAN 有一个更加深刻和系统的理解。后续博文将会对 f-divergence GAN 以及 WGAN 等 GAN 的变型进行一些介绍，它们的基本原理都是在这些基础上进行一些相关改变的，因此弄懂这些后，对它们的理解将会变得容易一些。
+
+<div align="center">
+	<img src="/images/posts/GAN/ppgn.png" height="300" width="600">
+</div>
