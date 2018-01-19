@@ -6,6 +6,13 @@ tags: 机器学习
 music-id: 31654478
 ---
 
+<div align="center">
+	<img src="/images/posts/regression/regression.jpg" height="300" width="300">
+</div>
+
+
+Bengion 镇楼！
+
 ## 背景介绍
 
 前段时间在空闲之余做了下 Kaggle 和天池的比赛，所以经常用到一些集成算法，像 stacking 和 boosting 等。因此，接下来几篇博文将会简单介绍下 boosting 的基本原理以及其经典算法。
